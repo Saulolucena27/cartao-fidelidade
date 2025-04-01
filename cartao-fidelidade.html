@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Fidelidade Academia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        .card-container {
+            width: 350px;
+            height: 220px;
+            perspective: 1000px;
+        }
+        
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 20px;
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .customer-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .card-number {
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .checkins {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .checkin {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+        
+        .checkin.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .info {
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .rewards {
+            margin-top: 20px;
+        }
+        
+        .rewards h3 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        
+        .rewards ul {
+            list-style-type: none;
+        }
+        
+        .rewards li {
+            margin-bottom: 5px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rewards li:before {
+            content: "✓";
+            margin-right: 5px;
+            color: #4CAF50;
+        }
+        
+        .expiry {
+            margin-top: auto;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .member-info {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-front">
+                <div class="logo"><span class="logo-icon">💪</span>POWER FIT</div>
+                <div class="customer-name">Membro: <span id="name">Carlos Santos</span></div>
+                <div class="member-info">Plano: Premium</div>
+                <div class="card-number">ID: <span id="cardNumber">A2025-04-125</span></div>
+                
+                <div class="checkins">
+                    <div class="checkin active">✓</div>
+                    <div class="checkin active">✓</div>
+                    <div class="checkin active">✓</div>
+                    <div class="checkin active">✓</div>
+                    <div class="checkin">5</div>
+                    <div class="checkin">6</div>
+                    <div class="checkin">7</div>
+                    <div class="checkin">8</div>
+                    <div class="checkin">9</div>
+                    <div class="checkin">10</div>
+                    <div class="checkin">11</div>
+                    <div class="checkin">12</div>
+                    <div class="checkin">13</div>
+                    <div class="checkin">14</div>
+                    <div class="checkin">15</div>
+                </div>
+                
+                <div class="info">Passe o mouse para ver os descontos</div>
+            </div>
+            
+            <div class="card-back">
+                <div class="rewards">
+                    <h3>DESCONTOS E BENEFÍCIOS</h3>
+                    <ul>
+                        <li>5 check-ins: 10% de desconto em suplementos</li>
+                        <li>8 check-ins: 1 sessão com personal trainer</li>
+                        <li>10 check-ins: 15% de desconto na renovação</li>
+                        <li>15 check-ins: 1 mês adicional grátis</li>
+                    </ul>
+                </div>
+                
+                <div class="expiry">Válido até: 31/12/2025</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
