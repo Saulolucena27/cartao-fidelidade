@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Fidelidade Academia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="logo"><span class="logo-icon">💪</span>POWER FIT</div>
+            
+            <div class="customer-info">
+                <div class="customer-name">Membro: <span id="memberName">Carlos Santos</span></div>
+                <div class="member-info">Plano: <span id="memberPlan">Premium</span></div>
+                <div class="card-number">ID: <span id="memberId">A2025-04-125</span></div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section-title">Check-ins (Clique para registrar)</div>
+            <div class="checkins" id="checkinsContainer">
+                <!-- Os check-ins serão gerados dinamicamente pelo JavaScript -->
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="rewards">
+                <h3>DESCONTOS E BENEFÍCIOS</h3>
+                <ul>
+                    <li>3 check-ins: 10% de desconto em suplementos</li>
+                    <li>5 check-ins: 1 sessão com personal trainer</li>
+                    <li>8 check-ins: 15% de desconto na renovação</li>
+                    <li>10 check-ins: 1 mês adicional grátis</li>
+                </ul>
+            </div>
+            
+            <div class="expiry">Válido até: 31/12/2025</div>
+        </div>
+        
+        <div class="admin-controls">
+            <h3>Controles de Administrador</h3>
+            <div class="admin-buttons">
+                <button id="resetAllBtn" class="btn btn-danger">Resetar Todos</button>
+                <button id="toggleAdminModeBtn" class="btn btn-primary">Modo Admin</button>
+            </div>
+            <div class="admin-form">
+                <div class="form-group">
+                    <label for="memberNameInput">Nome do Membro:</label>
+                    <input type="text" id="memberNameInput" placeholder="Nome do membro">
+                </div>
+                <div class="form-group">
+                    <label for="memberPlanInput">Plano:</label>
+                    <select id="memberPlanInput">
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="memberIdInput">ID do Membro:</label>
+                    <input type="text" id="memberIdInput" placeholder="ID do membro">
+                </div>
+                <button id="updateMemberInfoBtn" class="btn btn-success">Atualizar Informações</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="status-message" id="statusMessage"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
